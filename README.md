@@ -5,3 +5,6 @@ This repository contains the materials, notes, and code examples I created while
 🛠 Tools & Environment
 - R
 - RStudio
+
+
+📌 This repository is intended for learning and practice purposes.
