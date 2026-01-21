@@ -1,0 +1,87 @@
+```{r}
+#Within the scope of this work:
+# Importing datasets into the R environment
+# Examining variables using descriptive statistics
+# Creating frequency tables for categorical data
+# Producing basic visualizations such as bar plots and pie charts
+#These studies aim to develop fundamental skills in data analysis and data visualization.
+```
+
+```{r install packages}
+
+install.packages("haven")
+install.packages("labelled")
+install.packages("gtsummary")
+install.packages("tidyverse")
+
+
+
+```
+```{r}
+library(haven)
+library(labelled)
+library(gtsummary)
+library(tidyverse)
+
+```
+
+```{r data sets}
+tgss <- read_sav("C:/Users/tueli/Downloads/01KA660ACSJ9328Z2RR5ZTXBAP (1).zip")
+
+tgss1 = look_for(tgss)
+
+gss <- read_sav("C:/Users/tueli/Downloads/VERİLER/GSS2024.sav")
+
+gss1 = look_for(gss)
+
+
+```
+
+```{r tgss descr}
+mean(tgss$age)
+
+round(mean(tgss$age),2)
+
+magetr=mean(tgss$age)
+
+round(magetr,2)
+
+mageusa=mean(gss$age)
+
+round(mageusa,2)
+
+anyNA(tgss$age)
+anyNA(gss$age)
+
+round(mean(gss$age, na.rm = T), 2)
+
+
+```
+
+```{r exercise 2}
+summary(tgss$age)
+
+summary((tgss$weight))
+
+
+```
+
+
+```{r visuals}
+table(tgss$degurba)
+
+barplot(  table(as_factor(tgss$degurba)),
+          ylim = c(0,2000),
+          xlab = "Yerleşim Türü",
+          ylab = "Sayı",
+          col = "blue")
+
+pie(  table(as_factor(tgss$degurba)),
+          ylim = c(0,2000),
+          xlab ="Yerleşim Türü",
+          col = c("green","red","blue"))
+
+
+
+```
+
